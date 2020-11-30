@@ -7,10 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yulmaso.oicotest.data.Quote
 import com.yulmaso.oicotest.databinding.ItemChatBinding
 class ChatAdapter(
-    private val chatListener: ChatListener
+    private val chatListener: ChatListener,
+    private val items: MutableList<Quote>
 ): RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
-
-    private val items: MutableList<Quote> = ArrayList()
 
     interface ChatListener {
         fun onItemClick(item: Quote)
@@ -32,14 +31,6 @@ class ChatAdapter(
         val oldSize = this.items.size
         this.items.addAll(items)
         notifyItemRangeInserted(oldSize, items.size)
-    }
-
-    fun setItems(items: List<Quote>) {
-        this.items.apply {
-            clear()
-            addAll(items)
-        }
-        notifyDataSetChanged()
     }
 
     inner class ChatViewHolder(

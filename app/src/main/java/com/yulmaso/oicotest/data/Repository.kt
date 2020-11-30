@@ -18,6 +18,7 @@ class Repository(
     companion object {
         private var INSTANCE: Repository? = null
 
+        @Synchronized
         fun getInstance(): Repository {
              return INSTANCE ?: Repository(
                     provideRetrofit().create(QuotesService::class.java)
@@ -25,8 +26,9 @@ class Repository(
         }
 
         private fun provideRetrofit(): Retrofit {
-            val logging = HttpLoggingInterceptor()
-                .setLevel(HttpLoggingInterceptor.Level.BODY)
+            val logging = HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            }
 
             val client = OkHttpClient.Builder()
                 .addInterceptor(logging)

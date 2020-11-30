@@ -4,7 +4,5 @@ object Constants {
     const val BASE_URL = "https://oico.app/"
     const val TEST_PATH = "test"
 
-    const val LOG_TAG = "myLogs"
-
-    const val LIMIT = 10
+    const val DEFAULT_QUOTES_COUNT = 10
 }
