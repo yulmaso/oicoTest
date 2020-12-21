@@ -13,6 +13,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/details_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -68,16 +69,40 @@
             app:horizontal_interval="5dp"
             app:layout_constraintTop_toBottomOf="@id/details_tv"
             app:tag_background_color="@android:color/transparent"
-            app:tag_border_color="@color/tag_grey"
+            app:tag_border_color="@color/tag_gray"
             app:tag_border_width="1dp"
             app:tag_clickable="false"
             app:tag_corner_radius="8dp"
             app:tag_horizontal_padding="14dp"
-            app:tag_text_color="@color/tag_grey"
+            app:tag_text_color="@color/tag_gray"
             app:tag_text_size="18sp"
             app:tag_theme="none"
             app:tag_vertical_padding="4dp"
             app:vertical_interval="12dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/details_tag_layout"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.yulmaso.oicotest.utils.PerkFlow
+                android:id="@+id/details_flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:flow_horizontalBias="0"
+                app:flow_horizontalGap="5dp"
+                app:flow_horizontalStyle="packed"
+                app:flow_verticalBias="0"
+                app:flow_verticalGap="2dp"
+                app:flow_wrapMode="chain"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ProgressBar
             android:id="@+id/details_progressbar"

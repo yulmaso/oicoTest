@@ -41,6 +41,7 @@ class DetailsFragment : BaseFragment() {
         viewModel.quote.observe(viewLifecycleOwner, Observer {
             details_tv.text = it.text
             details_tag_layout.tags = it.tagList
+            details_flow.setup(details_root, it.tagList)
         })
 
         viewModel.error.observeEvent(viewLifecycleOwner, Observer {

@@ -4,5 +4,5 @@
     <color name="colorPrimaryDark">@color/colorPrimary</color>
     <color name="colorAccent">#5DE7FF</color>
 
-    <color name="tag_grey">#777777</color>
+    <color name="tag_gray">#777777</color>
 </resources>
